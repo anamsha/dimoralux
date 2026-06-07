@@ -117,22 +117,14 @@ body {
 }
 
 .hero {
-
   min-height: 85vh;
-
-  width: min(
-    calc(100% - 3rem),
-    var(--content-width)
-  );
-
-  margin: auto;
-
+  width: min(100%, var(--content-width));
+  margin-left: 0;
+  margin-right: auto;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   align-items: center;
-
   gap: 4rem;
-
   position: relative;
 }
 
