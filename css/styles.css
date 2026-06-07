@@ -14,7 +14,7 @@
   --transition:
     350ms cubic-bezier(.22,.61,.36,1);
 
-  --content-width: 1200px;
+  --content-width: 1700px;
 }
 
 @font-face {
@@ -57,9 +57,7 @@ body {
   );
 
   margin: 0 auto;
-
   padding: 2rem 0;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,7 +76,6 @@ body {
 }
 
 .main-navigation {
-
   display: flex;
   gap: 2rem;
 }
@@ -86,9 +83,9 @@ body {
 .main-navigation a {
 
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--wine-rose:);
 
-  font-weight: 500;
+  font-weight: 600;
 
   position: relative;
 
@@ -98,17 +95,12 @@ body {
 .main-navigation a::after {
 
   content: "";
-
   position: absolute;
-
   bottom: -8px;
   left: 0;
-
   width: 0;
   height: 1px;
-
   background: var(--wine-rose);
-
   transition: var(--transition);
 }
 
@@ -119,8 +111,8 @@ body {
 .hero {
   min-height: 85vh;
   width: min(100%, var(--content-width));
-  margin-left: 0;
-  margin-right: auto;
+  margin-left: 128px;
+  margin-right: 128px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   align-items: center;
@@ -136,7 +128,7 @@ body {
   );
   line-height: .95;
   max-width: 100%; 
-  color: var(--wine-rose);
+  color: var(--petal-pink);
   margin-bottom: 1.5rem;
 }
 
@@ -145,18 +137,16 @@ body {
   letter-spacing: .25em;
   text-transform: uppercase;
 
-  color: var(--petal-pink);
+  color: var(--wine-rose);
 
   margin-bottom: 1rem;
 }
 
 .hero-description {
 
-  max-width: 560px;
-
+  max-width: 960px;
   font-size: 1.05rem;
   line-height: 1.8;
-
   margin-bottom: 2.5rem;
 }
 
@@ -168,14 +158,10 @@ body {
     1rem 2rem;
 
   border-radius: 999px;
-
   text-decoration: none;
-
-  background: var(--petal-pink);
-  color: white;
-
+  background: white;
+  color: var(--petal-pink);
   transition: var(--transition);
-
   box-shadow: var(--shadow-soft);
 }
 
@@ -183,7 +169,6 @@ body {
 
   transform:
     translateY(-3px);
-
   background: var(--wine-rose);
 }
 
@@ -216,18 +201,12 @@ body {
 }
 
 .ornament-circle::before {
-
-  content: "❀";
-
+  content: "♡";
   position: absolute;
-
   inset: 0;
-
   display: grid;
   place-items: center;
-
   font-size: 10rem;
-
   color: rgba(155,71,84,.25);
 }
 
@@ -242,7 +221,6 @@ body {
 }
 
 .section-heading {
-
   text-align: center;
   margin-bottom: 4rem;
 }
@@ -257,7 +235,6 @@ body {
 .section-heading h2 {
 
   margin-top: 1rem;
-
   font-size: clamp(
     2rem,
     4vw,
@@ -277,7 +254,7 @@ body {
 
 .feature-card {
 
-  background: rgba(255,255,255,.6);
+  background: rgba(255,255,255,.5);
 
   padding: 2rem;
 
