@@ -105,28 +105,66 @@
 
     .hero-content {
       text-align: left;
-      max-width: 800px;
+      max-width: 900px;
     }
 
+    /* UPDATED H1 STYLES: #3C3737 color, 72px size */
     .hero-content h1 {
-      font-size: clamp(3.5rem, 6vw, 6.5rem);
-      line-height: 0.95;
-      color: var(--petal-pink);
-      margin-bottom: 1.5rem;
+      font-size: 72px;          /* Fixed 72px as requested */
+      line-height: 1.1;
+      color: #3C3737;           /* Changed from pink to dark text color */
+      margin-bottom: 48px;      /* 48px gap between H1 and body text */
+      font-weight: 500;
+      letter-spacing: -0.02em;
     }
 
+    /* UPDATED hero description: 32px body text */
+    .hero-description {
+      font-size: 32px;          /* 32px body text as requested */
+      line-height: 1.4;
+      color: #3C3737;           /* Matching the dark elegant tone */
+      max-width: 800px;
+      font-weight: 400;
+    }
+
+    /* Keep kicker styling consistent */
     .hero-kicker {
       letter-spacing: .25em;
       text-transform: uppercase;
       color: var(--wine-rose);
       margin-bottom: 1rem;
+      font-size: 1rem;
     }
 
-    .hero-description {
-      max-width: 960px;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
+    /* Responsive adjustments for mobile */
+    @media (max-width: 900px) {
+      .hero-content h1 {
+        font-size: 48px;        /* Scales down on tablet */
+        margin-bottom: 32px;
+      }
+      .hero-description {
+        font-size: 24px;        /* Scales down but still large */
+      }
+    }
+
+    @media (max-width: 650px) {
+      .hero-content h1 {
+        font-size: 36px;
+        margin-bottom: 24px;
+      }
+      .hero-description {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      .hero-description {
+        font-size: 18px;
+      }
     }
 
     .hero-ornament {
@@ -245,7 +283,7 @@
       }
     }
 
-    /* ===== NEW MARQUEE STYLES (WORKING) ===== */
+    /* ===== MARQUEE STYLES ===== */
     .marquee-section {
       width: 100%;
       background-color: #FFE2E6;
@@ -289,7 +327,7 @@
       }
     }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE MARQUEE */
     @media (max-width: 900px) {
       .hero {
         align-items: center;
@@ -343,7 +381,7 @@
   </header>
 
   <main>
-    <!-- HERO SECTION - NOW LEFT ALIGNED -->
+    <!-- HERO SECTION: updated typography (H1: #3C3737, 72px, 48px gap below, body text 32px) -->
     <section class="hero">
       <div class="hero-glow"></div>
       <div class="hero-content">
@@ -356,19 +394,19 @@
       </div>
     </section>
 
-    <!-- MARQUEE SECTION - WORKING BANNER -->
+    <!-- MARQUEE SECTION -->
     <div class="marquee-section">
       <div class="marquee-track">
         <div class="marquee-item">
           <span class="marquee-text">dimora lux</span> <span>🎀</span>
           <span class="marquee-text">dimora lux</span> <span>💗</span>
-          <span class="marquee-text">dimora lux</span> <span>🌷</span>
+          <span class="marquee-text">dimora lox</span> <span>🌷</span>
           <span class="marquee-text">dimora lux</span> <span>💝</span>
         </div>
         <div class="marquee-item">
           <span class="marquee-text">dimora lux</span> <span>🎀</span>
           <span class="marquee-text">dimora lux</span> <span>💗</span>
-          <span class="marquee-text">dimora lux</span> <span>🌷</span>
+          <span class="marquee-text">dimora lox</span> <span>🌷</span>
           <span class="marquee-text">dimora lux</span> <span>💝</span>
         </div>
       </div>
