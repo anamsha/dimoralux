@@ -3,31 +3,339 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Dimora lux 🌷 | Home, lifestyle and decor</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  >
+  <style>
+    /* ===== YOUR ORIGINAL STYLES (PRESERVED) ===== */
+    :root {
+      --rose-blush: #EDBFC6;
+      --ivory-rose: #FFF1F1;
+      --petal-pink: #EE6E82;
+      --wine-rose: #9B4754;
+      --text-color: #3C3737;
+      --shadow-soft: 0 20px 60px rgba(155, 71, 84, 0.12);
+      --radius-large: 28px;
+      --transition: 350ms cubic-bezier(.22, .61, .36, 1);
+      --content-width: 1700px;
+    }
 
-  <link rel="stylesheet" href="css/styles.css">
+    @font-face {
+      font-family: "Rose Orchard";
+      src: url("../RoseOrchardGarden.otf") format("opentype");
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text-color);
+      background: radial-gradient(circle at top, rgba(237, 191, 198, .35), transparent 45%), var(--ivory-rose);
+      overflow-x: hidden;
+    }
+
+    .site-header {
+      width: min(calc(100% - 3rem), var(--content-width));
+      margin: 0 auto;
+      padding: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-mark {
+      font-family: "Rose Orchard";
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: var(--wine-rose);
+    }
+
+    .main-navigation {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .main-navigation a {
+      text-decoration: none;
+      color: var(--wine-rose);
+      font-weight: 600;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .main-navigation a::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--wine-rose);
+      transition: var(--transition);
+    }
+
+    .main-navigation a:hover::after {
+      width: 100%;
+    }
+
+    /* FIXED HERO SECTION - LEFT ALIGNED */
+    .hero {
+      min-height: 85vh;
+      width: min(100%, var(--content-width));
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-content {
+      text-align: left;
+      max-width: 800px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(3.5rem, 6vw, 6.5rem);
+      line-height: 0.95;
+      color: var(--petal-pink);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-kicker {
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--wine-rose);
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      max-width: 960px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-ornament {
+      position: absolute;
+      right: 5%;
+      bottom: 10%;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .ornament-circle {
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(238, 110, 130, .35), rgba(237, 191, 198, .12));
+      backdrop-filter: blur(15px);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .ornament-circle::before {
+      content: "♡";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 10rem;
+      color: rgba(155, 71, 84, .25);
+    }
+
+    /* FEATURE SHOWCASE */
+    .feature-showcase {
+      width: min(calc(100% - 3rem), var(--content-width));
+      margin: 8rem auto;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, .5);
+      padding: 2rem;
+      border-radius: var(--radius-large);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-card span {
+      color: var(--petal-pink);
+      font-weight: 600;
+    }
+
+    .feature-card h3 {
+      margin: 1rem 0;
+    }
+
+    .feature-card p {
+      line-height: 1.7;
+    }
+
+    /* BRAND STORY */
+    .brand-story {
+      padding: 8rem 2rem;
+      text-align: center;
+    }
+
+    .story-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .story-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .story-content p {
+      line-height: 2;
+    }
+
+    /* FLOATING PETALS */
+    .floating-petals {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .petal {
+      position: absolute;
+      color: rgba(238, 110, 130, .25);
+      animation: drift linear infinite;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateY(-100px) rotate(0deg);
+      }
+      to {
+        transform: translateY(120vh) rotate(360deg);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* ===== NEW MARQUEE STYLES (WORKING) ===== */
+    .marquee-section {
+      width: 100%;
+      background-color: #FFE2E6;
+      overflow: hidden;
+      padding: 1.2rem 0;
+      position: relative;
+      z-index: 5;
+      border-top: 1px solid rgba(156, 94, 104, 0.2);
+      border-bottom: 1px solid rgba(156, 94, 104, 0.2);
+      margin: 2rem 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: scrollMarquee 32s linear infinite;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 128px;
+      font-size: 1.6rem;
+      font-family: "Rose Orchard", "Inter", sans-serif;
+      color: #9C5E68;
+      white-space: nowrap;
+    }
+
+    .marquee-text {
+      font-family: "Rose Orchard", "Inter", sans-serif;
+      color: #9C5E68;
+      font-size: 1.6rem;
+    }
+
+    @keyframes scrollMarquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        align-items: center;
+        text-align: center;
+      }
+      .hero-content {
+        text-align: center;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .main-navigation {
+        gap: 1rem;
+      }
+      .ornament-circle {
+        width: 320px;
+        height: 320px;
+      }
+      .hero-ornament {
+        display: none;
+      }
+      .marquee-item {
+        gap: 80px;
+        font-size: 1.2rem;
+      }
+      .marquee-text {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .marquee-item {
+        gap: 60px;
+        font-size: 1rem;
+      }
+      .marquee-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="floating-petals"></div>
   <header class="site-header">
-    <div class="brand-mark">
-      dimora lux
-    </div>
-
+    <div class="brand-mark">dimora lux</div>
     <nav class="main-navigation">
       <a href="#browse">Explore</a>
       <a href="#about">About</a>
@@ -35,120 +343,80 @@
   </header>
 
   <main>
-
-        <section class="hero">
-
+    <!-- HERO SECTION - NOW LEFT ALIGNED -->
+    <section class="hero">
       <div class="hero-glow"></div>
-
       <div class="hero-content">
-
-        <p class="hero-kicker">
-          💌
-        </p>
-
-        <h1>
-          A love letter from the city of pink sunsets
-        </h1>
-
-        <p class="hero-description">
-          Something lux and something divine is loading. Coming soon.
-        </p>
-
-
+        <p class="hero-kicker">💌</p>
+        <h1>A love letter from the city of pink sunsets</h1>
+        <p class="hero-description">Something lux and something divine is loading. Coming soon.</p>
       </div>
-
       <div class="hero-ornament">
         <div class="ornament-circle"></div>
       </div>
-
     </section>
 
-    <!-- ========== MARQUEE SECTION (ADD THIS) ========== -->
+    <!-- MARQUEE SECTION - WORKING BANNER -->
     <div class="marquee-section">
       <div class="marquee-track">
-        <!-- First loop -->
         <div class="marquee-item">
-          <span class="marquee-text">dimora lux</span>
-          <span>🎀</span>
-          <span class="marquee-text">dimora lux</span>
-          <span>💗</span>
-          <span class="marquee-text">dimora lux</span>
-          <span>🌷</span>
-          <span class="marquee-text">dimora lux</span>
-          <span>💝</span>
+          <span class="marquee-text">dimora lux</span> <span>🎀</span>
+          <span class="marquee-text">dimora lux</span> <span>💗</span>
+          <span class="marquee-text">dimora lux</span> <span>🌷</span>
+          <span class="marquee-text">dimora lux</span> <span>💝</span>
         </div>
-        <!-- Duplicate for seamless loop (128px gap after 💝 is automatic from CSS gap) -->
         <div class="marquee-item">
-          <span class="marquee-text">dimora lux</span>
-          <span>🎀</span>
-          <span class="marquee-text">dimora lux</span>
-          <span>💗</span>
-          <span class="marquee-text">dimora lux</span>
-          <span>🌷</span>
-          <span class="marquee-text">dimora lux</span>
-          <span>💝</span>
+          <span class="marquee-text">dimora lux</span> <span>🎀</span>
+          <span class="marquee-text">dimora lux</span> <span>💗</span>
+          <span class="marquee-text">dimora lux</span> <span>🌷</span>
+          <span class="marquee-text">dimora lux</span> <span>💝</span>
         </div>
       </div>
     </div>
 
-    <section
-      id="browse"
-      class="feature-showcase"
-    >
-
+    <!-- CARDS SECTION -->
+    <section id="browse" class="feature-showcase">
       <div class="feature-grid">
-
         <article class="feature-card">
           <span>🌷</span>
           <h3>Home</h3>
-          <p>
-         It’s where the heart is, and we carry it everywhere we go, in all that we do.
-          </p>
+          <p>It’s where the heart is, and we carry it everywhere we go, in all that we do.</p>
         </article>
-
         <article class="feature-card">
           <span>🌷</span>
           <h3>Lifestyle</h3>
-          <p>
-            Lebensstil, as it’s known in German. It’s what we’re drawn to, and what pulls us in.  
-          </p>
+          <p>Lebensstil, as it’s known in German. It’s what we’re drawn to, and what pulls us in.</p>
         </article>
-
         <article class="feature-card">
           <span>🌷</span>
           <h3>Decor</h3>
-          <p>
-            That je ne sais quoi of why we do what we do, the intent behind all our lovely trinkets.
-          </p>
+          <p>That je ne sais quoi of why we do what we do, the intent behind all our lovely trinkets.</p>
         </article>
-
       </div>
-
     </section>
 
-    <section
-      id="about"
-      class="brand-story"
-    >
-
-      <div class="story-content"
-
-        <h1>
-          💗
-        </h1>
-
-        <p>
-          Dimora lux was imagined as a sanctuary of
-          elegance, where softness meets refinement. Where daydreams, cloudy skies and lush florals deliver us to a place sometime ever so long ago. 
-        </p>
-
+    <section id="about" class="brand-story">
+      <div class="story-content">
+        <h1>💗</h1>
+        <p>Dimora lux was imagined as a sanctuary of elegance, where softness meets refinement. Where daydreams, cloudy skies and lush florals deliver us to a place sometime ever so long ago.</p>
       </div>
-
     </section>
-
   </main>
 
-  <script src="js/main.js"></script>
-
+  <script>
+    // Your original floating petals script
+    const petalsLayer = document.querySelector(".floating-petals");
+    for (let i = 0; i < 18; i++) {
+      const petal = document.createElement("span");
+      petal.classList.add("petal");
+      petal.textContent = Math.random() > 0.5 ? "♥" : "❀";
+      petal.style.left = `${Math.random() * 100}%`;
+      petal.style.fontSize = `${16 + Math.random() * 18}px`;
+      petal.style.animationDuration = `${12 + Math.random() * 12}s`;
+      petal.style.animationDelay = `${Math.random() * 8}s`;
+      petalsLayer.appendChild(petal);
+    }
+  </script>
 </body>
+
 </html>
